@@ -15,7 +15,7 @@ module.exports = function (grunt) {
         webpack: {
             wrtc: {
                 entry: {
-                    home: ['./src/js/pages/index.js']
+                    index: ['./src/js/pages/index.js']
                 },
                 output: {
                     path: __dirname + "/dist",
