@@ -1,0 +1,12 @@
+
+#Idea
+.idea/*
+
+#Node Modules
+node_modules/*
+
+#Images
+#test/*
+index.html
+
+app/modules/*

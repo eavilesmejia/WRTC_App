@@ -1,0 +1,208 @@
+/* Floats and Blocks */
+$property: border;
+$position_list: bottom top right left;
+$margin_padding: margin padding;
+$width_height: height width;
+$m-width_height: max-height max-width;
+
+//Generate borders colors
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @each $l in $position_list {
+      @each $p in $property {
+        @if $color_type == "base" {
+          .#{$p}-#{$color_name}-#{$l} {
+            border-#{$l}-color: $color_value !important;
+            &:before {
+              border-#{$l}-color: $color_value !important;
+            }
+            &:after {
+              border-#{$l}-color: $color_value !important;
+            }
+          }
+        } @else {
+          .#{$p}-#{$color_name}-#{$l}.#{$color_type} {
+            border-#{$l}-color: $color_value !important;
+            &:before {
+              border-#{$l}-color: $color_value !important;
+            }
+            &:after {
+              border-#{$l}-color: $color_value !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Generate padding, margin
+@for $i from 0 through 100 {
+  @each $l in $position_list {
+    @each $m_p in $margin_padding {
+      .#{$m_p}-#{$l}-#{$i} {
+        #{$m_p}-#{$l}: (0px + $i) !important;
+      }
+    }
+  }
+}
+
+
+//Generate positions
+@for $i from 0 through 300 {
+  @each $l in $position_list {
+    .#{$l}-#{$i} {
+      #{$l}: 0px + $i !important;
+    }
+  }
+}
+
+//Generate size
+@for $i from 0 through 1000 {
+  @each $l in $width_height {
+    .#{$l}-#{$i} {
+      #{$l}: 0px + $i !important;
+    }
+  }
+}
+
+//Generate size
+@for $i from 200 through 300 {
+  @each $l in $m-width_height {
+    @if $i % 2 == 0 {
+      .#{$l}-#{$i} {
+        #{$l}: 0px + $i !important;
+      }
+    }
+  }
+}
+
+
+.clearfix {
+  @include clearfix;
+}
+
+.center-block {
+  display: block !important;
+  float: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  clear: both;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.float-right {
+  float: right !important;
+}
+
+.float-left {
+  float: left !important;
+}
+
+/****** Position ******/
+.z-index-base {
+  z-index: 100;
+}
+
+.z-index-middle {
+  z-index: 200;
+}
+
+.z-index-top {
+  z-index: 500;
+}
+
+.no-left {
+  left: 0;
+}
+
+.no-right {
+  right: 0;
+}
+
+.no-top {
+  top: 0;
+}
+
+.ow-hidden{
+  overflow: hidden;
+}
+
+.fixed {
+  position: fixed !important;
+}
+
+.absolute {
+  position: absolute !important;
+}
+
+.relative {
+  position: relative !important;
+}
+
+/****** Struct ******/
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.vertical-padding {
+  padding-top: ($grid-gutter-height / 2) !important;
+  padding-bottom: ($grid-gutter-height / 2) !important;
+}
+
+.horizontal-padding {
+  padding-left: ($grid-gutter-width / 2) !important;
+  padding-right: ($grid-gutter-width / 2) !important;
+}
+
+/***** Out styles *****/
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-border {
+  border: none !important;
+}
+
+.no-float {
+  float: none !important;
+}
+
+/***** Util ******/
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.clear {
+  clear: both;
+  width: 0;
+  height: 0;
+}

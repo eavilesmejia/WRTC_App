@@ -1,0 +1,453 @@
+/**
+https://smacss.com/book/type-state
+*/
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext);
+
+@font-face {
+  font-family: 'PFDinTextCondPro';
+  src: url('http://static.cdprojektred.com/buythewitcher/fonts/2B84B5_0_0.eot?1415275841');
+  src: url('http://static.cdprojektred.com/buythewitcher/fonts/2B84B5_0_0.eot?&1415275841#iefix') format("embedded-opentype"),
+  url('http://static.cdprojektred.com/buythewitcher/fonts/2B84B5_0_0.woff?1415275842') format("woff"),
+  url('http://static.cdprojektred.com/buythewitcher/fonts/2B84B5_0_0.ttf?1415275842') format("truetype");
+  font-weight: bold;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'PFDinTextCondPro';
+  src: url('http://static.cdprojektred.com/buythewitcher/fonts/2B84B5_1_0.eot?1415275842');
+  src: url('http://static.cdprojektred.com/buythewitcher/fonts/2B84B5_1_0.eot?&1415275842#iefix') format("embedded-opentype"),
+  url('http://static.cdprojektred.com/buythewitcher/fonts/2B84B5_1_0.woff?1415275843') format("woff"),
+  url('http://static.cdprojektred.com/buythewitcher/fonts/2B84B5_1_0.ttf?1415275843') format("truetype");
+  font-weight: normal;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'PFDinTextCondPro';
+  src: url('http://static.cdprojektred.com/buythewitcher/fonts/2B84B5_2_0.eot?1415275843');
+  src: url('http://static.cdprojektred.com/buythewitcher/fonts/2B84B5_2_0.eot?&1415275843#iefix') format("embedded-opentype"),
+  url('http://static.cdprojektred.com/buythewitcher/fonts/2B84B5_2_0.woff?1415275844') format("woff"),
+  url('http://static.cdprojektred.com/buythewitcher/fonts/2B84B5_2_0.ttf?1415275844') format("truetype");
+  font-weight: normal;
+  font-style: italic
+}
+
+@font-face {
+  font-family: 'DroidSans';
+  src: url('http://static.cdprojektred.com/buythewitcher/fonts/DroidSans-webfont.eot?1401937126');
+  src: url('http://static.cdprojektred.com/buythewitcher/fonts/DroidSans-webfont.eot?&1401937126#iefix') format("embedded-opentype"),
+  url('http://static.cdprojektred.com/buythewitcher/fonts/DroidSans-webfont.woff?1401937126') format("woff"),
+  url('http://static.cdprojektred.com/buythewitcher/fonts/DroidSans-webfont.ttf?1401937126') format("truetype"),
+  url('http://static.cdprojektred.com/buythewitcher/fonts/DroidSans-webfont.svg?1401937126#droid_sansregular') format("svg");
+  font-weight: normal;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'DroidSans';
+  src: url('http://static.cdprojektred.com/buythewitcher/fonts/DroidSans-Bold-webfont.eot?1401937128');
+  src: url('http://static.cdprojektred.com/buythewitcher/fonts/DroidSans-Bold-webfont.eot?&1401937128#iefix') format("embedded-opentype"),
+  url('http://static.cdprojektred.com/buythewitcher/fonts/DroidSans-Bold-webfont.woff?1401937128') format("woff"),
+  url('http://static.cdprojektred.com/buythewitcher/fonts/DroidSans-Bold-webfont.ttf?1401937126') format("truetype"),
+  url('http://static.cdprojektred.com/buythewitcher/fonts/DroidSans-Bold-webfont.svg?1401937128#droid_sansbold') format("svg");
+  font-weight: bold;
+  font-style: normal
+}
+
+.has-main-background {
+  @include filter(blur(1px));
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: -1;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url('../../../media/layout/b0b2ff5c7a8e36e210daedcb01a0c5c1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+:target {
+  display: flex !important;
+}
+
+.valign-wrapper-overlay {
+  //background-color: rgba(0, 0, 0, 0.8);
+  @extend .valign-wrapper;
+  @extend .has-main-background;
+  @include filter(blur(0px));
+  opacity: 1 !important;
+  z-index: 1000 !important;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.valign-wrapper-overlay-deep {
+  @extend .valign-wrapper-overlay;
+  background-color: transparentize(#333, 0.2);
+}
+
+.white-hover {
+  &:hover {
+    color: #fff !important;
+  }
+}
+
+.picture {
+  figure {
+    margin: 0;
+    @include border-radius(20px 20px);
+    overflow: hidden;
+  }
+}
+
+.poster-picture {
+  figure {
+    margin: 0;
+    img {
+      max-width: 45px;
+    }
+  }
+}
+
+.tiny-picture {
+  @extend .picture;
+  figure {
+    width: 30px;
+    height: 30px;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.small-picture {
+  @extend .picture;
+  figure {
+    width: 40px;
+    height: 40px;
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.middle-picture {
+  @extend .picture;
+  figure {
+    width: 80px;
+    height: 80px;
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
+
+/**COMPONENTS*/
+//Dropdown
+.dropdown {
+  .dropdown-result {
+    margin-left: 5px;
+    font-weight: bold;
+  }
+
+  .dropdown-content {
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    z-index: 1000;
+
+    li {
+      min-height: 100% !important;
+      line-height: normal !important;
+      a {
+        padding: 5px 8px !important;
+        color: #fff;
+        font-size: $font-size-base !important;
+
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+
+  .active {
+    display: block;
+    top: 0;
+    position: absolute;
+    opacity: 1;
+  }
+}
+
+//Tooltip
+.tooltip {
+  position: relative;
+  display: inline;
+
+  span {
+    @include clearfix();
+    opacity: 0;
+    padding: 2px 8px;
+    position: absolute;
+    min-width: 120px;
+    min-height: 30px;
+    width: auto;
+    height: auto;
+    color: #FFFFFF;
+    background: #000000;
+    line-height: 30px;
+    text-align: center;
+    visibility: hidden;
+    border-radius: 6px;
+  }
+
+  span:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid #000000;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+  }
+
+  &:hover span {
+    @include transition(opacity .30s ease-in-out);
+    visibility: visible;
+    opacity: 0.8;
+    left: 50%;
+    margin-left: -63px;
+    z-index: 999;
+  }
+
+  //Bottom position
+  .bottom-tip:after {
+    bottom: 100%;
+  }
+
+  &:hover > .bottom-tip {
+    top: 30px;
+  }
+
+  //Top position
+  .top-tip:after {
+    top: 100%;
+  }
+
+  &:hover > .top-tip {
+    bottom: 30px;
+  }
+}
+
+//Modal box
+.modal-box {
+  @include clearfix();
+  @include border-radius(5px 5px);
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 300px;
+  height: auto;
+  min-height: 60px;
+
+  .close-modal {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+  }
+}
+
+.modal-trailer-box {
+  @extend .modal-box;
+  width: 800px;
+  height: 500px;
+  iframe {
+    //border: 3px solid #fff;
+    overflow: hidden;
+    position: relative;
+    width: 800px;
+    height: 500px;
+  }
+}
+
+.modal-fb {
+  @extend .modal-box;
+  width: 800px;
+  height: 450px;
+  iframe {
+    //border: 3px solid #fff;
+    position: relative;
+    width: 800px;
+    height: 450px;
+  }
+}
+
+/**OTHERS*/
+
+.normalize-small-icon {
+  margin-right: 4px;
+  position: relative;
+}
+
+.normalize-medium-icon {
+  margin-right: 4px;
+  position: relative;
+}
+
+.border-dashed-bottom-white {
+  border-bottom: 1px dashed #fff;
+}
+
+.btn-close {
+  position: absolute;
+  top: 3px;
+  right: 0;
+  z-index: 100;
+}
+
+.btn-close, .btn-add {
+  padding: 0 10px;
+  line-height: normal;
+}
+
+.separated-pipe {
+  &:not(:last-of-type)::after {
+    content: " | "
+  }
+}
+
+.separated-comma {
+  &:not(:last-of-type)::after {
+    content: ", "
+  }
+}
+
+.error-label {
+  padding: 7px 10px !important;
+  @include border-radius(3px);
+  @extend .white-text;
+  @extend .red;
+}
+
+.default-label {
+  padding: 7px 10px !important;
+  @extend .error-label;
+  @extend .orange
+}
+
+.success-label {
+  padding: 7px 10px !important;
+  @extend .error-label;
+  @extend .green;
+}
+
+.radius {
+  @include border-radius(5px);
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
+/**QUERIES*/
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+
+@include media-small {
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@include media-middle {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@include media-large {
+
+}
+
+//MEDIA QUERIES
+
+//FIXED width
+//Laptops
+@media only screen and (max-width: 1024px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+}
+
+@media only screen and (min-width: 1150px) {
+
+}
+
+@media only screen and (min-width: 1280px) {
+
+}
+
+@media only screen and (min-width: 1440px) {
+
+}
+
+@media only screen and (min-width: 1600px) {
+
+}
+
+@media only screen and (min-width: 1610px) {
+
+}
+
+///////////////FIXED HEIGHT
+
+@media only screen and (min-height: 700px) {
+
+}
+
+@media only screen and (min-height: 769px) {
+  #main {
+    max-height: 780px;
+  }
+
+}
+
+@media only screen and (min-height: 801px) {
+  #main {
+    max-height: 840px;
+  }
+
+
+}
+
+@media only screen and (min-height: 1000px) {
+  #main {
+    max-height: 850px;
+  }
+}
+
+@media only screen and (min-height: 1150px) {
+  #main {
+    max-height: 100%;
+  }
+
+}
+
+@media only screen and (min-height: 1400px) {
+
+}

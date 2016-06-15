@@ -1,0 +1,25 @@
+
+.if-image {
+  @include filter(grayscale(100%));
+  @include filter(blur(5px));
+}
+
+.if-image {
+  @include filter(grayscale(100%));
+  transition: filter 0.4s;
+  -webkit-transition: -webkit-filter 1s;
+}
+
+.if-image:hover {
+  @include filter(grayscale(0));
+}
+
+@media #{$small-and-down} {
+  // styles for small screens and down
+  .on-small-divide {
+    height: 50% !important;
+    .brand-title {
+      top: 25% !important;
+    }
+  }
+}
