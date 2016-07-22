@@ -69,9 +69,9 @@
 
 	//Libs
 
-	_reactDom2.default.render(_react2.default.createElement(_videoBox2.default, null), document.getElementById('video-box')); /**
-	                                                                                                                           * Created by gmena on 06-15-16.
-	                                                                                                                           */
+	_reactDom2.default.render(_react2.default.createElement(_videoBox2.default, { 'class': 'receiver-video' }), document.getElementById('video-box')); /**
+	                                                                                                                                                    * Created by gmena on 06-15-16.
+	                                                                                                                                                    */
 
 /***/ },
 /* 2 */
@@ -19722,9 +19722,9 @@
 
 	var _video2 = _interopRequireDefault(_video);
 
-	var _rtc2 = __webpack_require__(162);
+	var _rtc = __webpack_require__(162);
 
-	var _rtc3 = _interopRequireDefault(_rtc2);
+	var _rtc2 = _interopRequireDefault(_rtc);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19734,14 +19734,22 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	//Libs
+
+
 	var VideoComponent = function (_Component) {
 	    _inherits(VideoComponent, _Component);
 
 	    function VideoComponent() {
 	        _classCallCheck(this, VideoComponent);
 
+	        //The rtc peer
+
 	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(VideoComponent).call(this));
 
+	        _this._rtcPeer = new _rtc2.default();
+
+	        //The initial state for component
 	        _this.state = {
 	            in_call: false,
 	            src: ''
@@ -19755,8 +19763,7 @@
 	        value: function mediaUp() {
 	            var _this2 = this;
 
-	            var _rtc = new _rtc3.default();
-	            _rtc.mediaUP().then(function (res) {
+	            this._rtcPeer.mediaUP().then(function (res) {
 	                _this2.setState({
 	                    in_call: true,
 	                    src: res
@@ -19766,13 +19773,17 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
+	            var _this3 = this;
+
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                _react2.default.createElement(_video2.default, { src: this.state.src }),
+	                _react2.default.createElement(_video2.default, { 'class': this.props.class, src: this.state.src }),
 	                _react2.default.createElement(
 	                    'button',
-	                    { onClick: this.mediaUp.bind(this) },
+	                    { onClick: function onClick() {
+	                            return _this3.mediaUp();
+	                        } },
 	                    'Call'
 	                )
 	            );
@@ -19820,7 +19831,7 @@
 	    _createClass(Video, [{
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement('video', { src: this.props.src, autoPlay: true });
+	            return _react2.default.createElement('video', { className: this.props.class, src: this.props.src, autoPlay: true });
 	        }
 	    }]);
 
@@ -19885,8 +19896,6 @@
 	            }
 
 	        };
-
-	        //Default ICE
 	    }
 
 	    /***

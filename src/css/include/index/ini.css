@@ -28850,11 +28850,11 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 .full-height {
   height: 100%; }
 
-.vertical-padding, .inital-menu figure {
+.vertical-padding {
   padding-top: 15px !important;
   padding-bottom: 15px !important; }
 
-.horizontal-padding, .inital-menu figure {
+.horizontal-padding {
   padding-left: 15px !important;
   padding-right: 15px !important; }
 
@@ -33030,25 +33030,11 @@ input[type=file] {
   input[type=file] + label {
     padding: 0 10px; }
 
-.ps-scrollbar-y {
-  background-color: #ff80ab !important; }
-
-.main-candidates-container .candidates-picture figure {
-  overflow: hidden;
-  min-height: 100%;
-  display: block;
-  min-width: 100%;
-  margin: 0; }
-  .main-candidates-container .candidates-picture figure img {
-    border-radius: 5px;
-    width: 100%;
-    height: 100%; }
-
-.inital-menu figure {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  text-align: center; }
+.receiver-video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1; }
 
 /*
 https://smacss.com/book/type-theme

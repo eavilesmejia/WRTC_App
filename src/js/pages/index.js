@@ -9,6 +9,6 @@ import VideoComponent from '../components/video/videoBox.jsx'
 //Libs
 
 ReactDom.render(
-    <VideoComponent/>,
+    <VideoComponent class="receiver-video"/>,
     document.getElementById('video-box')
 );

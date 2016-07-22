@@ -3,6 +3,7 @@
  */
 
 export default class RTC {
+
     constructor() {
         //Navigator info
         this.isMozNav = !!navigator.mozGetUserMedia;
@@ -45,8 +46,9 @@ export default class RTC {
 
         };
 
-        //Default ICE
     }
+
+    
 
     /***
      * Set configuration
@@ -120,7 +122,6 @@ export default class RTC {
      */
     setBandwidth(sdp) {
 
-
         if (this.isMozNav/* || navigator.userAgent.match( /Android|iPhone|iPad|iPod|BlackBerry|IEMobile/i ) */)
             return sdp;
 
@@ -158,7 +159,8 @@ export default class RTC {
             );
         });
 
-
     }
+
+
 
 }
