@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import Video from './video.jsx'
-import ButtonCaller from '../button/btnCaller.jsx'
+import Button from '../button/button.jsx'
 
 //Libs
 import RTC from '../../lib/rtc.js'
@@ -39,13 +39,13 @@ export default class VideoComponent extends Component {
         let _button;
         if (this.props.action == 'call') {
             if (this.state.in_call) {
-                _button = <ButtonCaller
+                _button = <Button
                     onClick={()=>{this.mediaClose()}}
                     class="btn btn-danger"
                     btnContent="close"
                 />
             } else {
-                _button = <ButtonCaller
+                _button = <Button
                     onClick={()=>{this.mediaUp()}}
                     class="btn btn-default"
                     btnContent="Call"

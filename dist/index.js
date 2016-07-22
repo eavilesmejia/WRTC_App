@@ -19725,9 +19725,9 @@
 
 	var _video2 = _interopRequireDefault(_video);
 
-	var _btnCaller = __webpack_require__(164);
+	var _button2 = __webpack_require__(165);
 
-	var _btnCaller2 = _interopRequireDefault(_btnCaller);
+	var _button3 = _interopRequireDefault(_button2);
 
 	var _rtc = __webpack_require__(162);
 
@@ -19791,7 +19791,7 @@
 	            var _button = void 0;
 	            if (this.props.action == 'call') {
 	                if (this.state.in_call) {
-	                    _button = _react2.default.createElement(_btnCaller2.default, {
+	                    _button = _react2.default.createElement(_button3.default, {
 	                        onClick: function onClick() {
 	                            _this3.mediaClose();
 	                        },
@@ -19799,7 +19799,7 @@
 	                        btnContent: 'close'
 	                    });
 	                } else {
-	                    _button = _react2.default.createElement(_btnCaller2.default, {
+	                    _button = _react2.default.createElement(_button3.default, {
 	                        onClick: function onClick() {
 	                            _this3.mediaUp();
 	                        },
@@ -20071,7 +20071,8 @@
 
 /***/ },
 /* 163 */,
-/* 164 */
+/* 164 */,
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20094,16 +20095,16 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ButtonCaller = function (_Component) {
-	    _inherits(ButtonCaller, _Component);
+	var Button = function (_Component) {
+	    _inherits(Button, _Component);
 
-	    function ButtonCaller() {
-	        _classCallCheck(this, ButtonCaller);
+	    function Button() {
+	        _classCallCheck(this, Button);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ButtonCaller).apply(this, arguments));
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Button).apply(this, arguments));
 	    }
 
-	    _createClass(ButtonCaller, [{
+	    _createClass(Button, [{
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
@@ -20114,10 +20115,10 @@
 	        }
 	    }]);
 
-	    return ButtonCaller;
+	    return Button;
 	}(_react.Component);
 
-	exports.default = ButtonCaller;
+	exports.default = Button;
 
 /***/ }
 /******/ ]);
