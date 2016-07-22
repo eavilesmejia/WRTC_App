@@ -48,7 +48,7 @@ export default class RTC {
 
     }
 
-    
+
 
     /***
      * Set configuration

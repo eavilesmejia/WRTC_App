@@ -6,9 +6,15 @@ import ReactDom from 'react-dom';
 import VideoComponent from '../components/video/videoBox.jsx'
 
 
-//Libs
-
+//Receiver
 ReactDom.render(
     <VideoComponent class="receiver-video"/>,
-    document.getElementById('video-box')
+    document.getElementById('video-box-receiver')
+);
+
+
+//Sender
+ReactDom.render(
+    <VideoComponent class="sender-video" action="call"/>,
+    document.getElementById('video-box-sender')
 );

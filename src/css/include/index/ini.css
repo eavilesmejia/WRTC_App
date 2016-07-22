@@ -32987,8 +32987,7 @@ ul {
 
 body {
   overflow: hidden;
-  margin: 0;
-  background-color: #05354b; }
+  margin: 0; }
 
 input:-webkit-autofill:focus,
 textarea :-webkit-autofill:focus,
@@ -33031,10 +33030,36 @@ input[type=file] {
     padding: 0 10px; }
 
 .receiver-video {
-  width: 100%;
-  height: 100%;
+  background-color: #f00;
+  z-index: -1;
   position: absolute;
-  z-index: -1; }
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%); }
+
+.video-box-sender {
+  position: absolute;
+  overflow: hidden;
+  max-height: 30vh;
+  max-width: 50vh;
+  min-height: 30vh;
+  min-width: 50vh;
+  bottom: 5%;
+  right: 3%;
+  z-index: 1; }
+  .video-box-sender .sender-video {
+    position: relative;
+    top: -30px;
+    width: 100%;
+    height: 100%;
+    background-color: #000; }
 
 /*
 https://smacss.com/book/type-theme
