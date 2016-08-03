@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+//Components
 import Video from './video.jsx'
 import Button from '../button/button.jsx'
 
